@@ -15,7 +15,7 @@ cd ~/TWRP
 
 mkdir ~/.bin
 curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
-python3 ~/.bin/repo init --depth=1 -u https://github.com/minimal_manifest_twrp/platform_manifest_twrp_omni.git -b twrp-4.4-deprecated
+python3 ~/.bin/repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-4.4-deprecated
 git clone --branch twrp-4.4 --single-branch https://github.com/T11x-TWRP/android_platform_manifest.git .repo/local_manifests
 python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bun --prune -j$(nproc --all)
 ```
