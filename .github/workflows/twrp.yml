@@ -43,6 +43,8 @@ jobs:
 
     - name: Building TWRP
       run: |
+        OLDPATH=$PATH
+        OLDJAVAHOME=$JAVA_HOME
         export PATH="$HOME/.jdk_7/jdk1.7.0_80/bin:$PATH"
         export JAVA_HOME="$HOME/.jdk_7/jdk1.7.0_80"
         cd ~/TWRP
@@ -51,6 +53,8 @@ jobs:
         export LC_ALL=C
         lunch omni_${{env.DEVICE}}-eng
         mka recoveryimage
+        export PATH=$OLDPATH
+        export JAVA_HOME=$OLDJAVAHOME
 
     - name: Uploading TWRP builds
       uses: actions/upload-artifact@v2

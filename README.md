@@ -31,12 +31,16 @@ tar -xzf jdk-7u80-linux-i586.tar.gz
 
 ## Building TWRP
 ```bash
+OLDPATH=$PATH
+OLDJAVAHOME=$JAVA_HOME
 export PATH="$HOME/.jdk_7/jdk1.7.0_80/bin:$PATH"
 export JAVA_HOME="$HOME/.jdk_7/jdk1.7.0_80"
 cd ~/TWRP
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export LC_ALL=C
-lunch omni_goya-eng
+lunch omni_${{env.DEVICE}}-eng
 mka recoveryimage
+export PATH=$OLDPATH
+export JAVA_HOME=$OLDJAVAHOME
 ```
