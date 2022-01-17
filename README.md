@@ -2,6 +2,10 @@
 
 ## `WORK IN PROGRESS. WILL EAT YOUR CAT.`
 
+## DISCLAIMER
+
+These are steps for Ubuntu 20.04 and Ubuntu 18.04.
+
 ## Prerequisites
 
 - Oracle JDK 7 *(installation steps can be found [here](#installing-oracle-jdk-7))*
