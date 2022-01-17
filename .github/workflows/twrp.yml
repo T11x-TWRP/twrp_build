@@ -1,7 +1,13 @@
-name: TWRP CI
-
 on:
   workflow_dispatch:
+    inputs:
+      msgname:
+        description: "The name of the triggered build that will show up"
+        default: "TWRP CI"
+        required: false
+        type: string
+
+name: ${{ github.event.inputs.msgname }}
 
 jobs:
   build:
