@@ -8,7 +8,7 @@ These are steps for Ubuntu 20.04 and Ubuntu 18.04.
 
 ## Prerequisites
 
-- Oracle JDK 7 *(installation steps can be found [here](#installing-oracle-jdk-7))*
+- Oracle JDK 7 *(installation steps can be found [here](#downloading-oracle-jdk-7))*
 - Android build tools *(installation steps can be found [here](https://source.android.com/setup/build/initializing?hl=en#installing-required-packages-ubuntu-1804))*
 
 ## Syncing TWRP sources
