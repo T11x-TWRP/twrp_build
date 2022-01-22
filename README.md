@@ -43,7 +43,7 @@ cd ~/TWRP
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export LC_ALL=C
-lunch omni_${{env.DEVICE}}-eng
+lunch omni_goya-eng
 mka recoveryimage
 export PATH=$OLDPATH
 export JAVA_HOME=$OLDJAVAHOME
