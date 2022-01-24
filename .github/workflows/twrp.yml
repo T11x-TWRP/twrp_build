@@ -20,14 +20,13 @@ jobs:
 
     - name: Installing JDK 7 + Build Dependencies
       run: |
-        mkdir ~/.jdk_7
-        cd ~/.jdk_7
-        wget https://download.java.net/openjdk/jdk7u75/ri/openjdk-7u75-b13-linux-x64-18_dec_2014.tar.gz
-        tar -xzf openjdk-7u75-b13-linux-x64-18_dec_2014.tar.gz
         sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev \
           gcc-multilib g++-multilib libc6-dev-i386 libncurses5 lib32ncurses5-dev x11proto-core-dev \
-          libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig schedtool
-
+          libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig schedtool axel
+        mkdir ~/.jdk_7
+        cd ~/.jdk_7
+        axel -q -n 4 https://download.java.net/openjdk/jdk7u75/ri/openjdk-7u75-b13-linux-x64-18_dec_2014.tar.gz
+        tar -xzf openjdk-7u75-b13-linux-x64-18_dec_2014.tar.gz
         sudo ln -f -s /usr/bin/python2.7 /usr/bin/python
 
     - name: Syncing TWRP sources
