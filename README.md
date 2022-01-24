@@ -2,7 +2,7 @@
 
 ## `WORK IN PROGRESS. WILL EAT YOUR CAT.`
 
-## DISCLAIMER
+## Disclaimer
 
 These are steps for Ubuntu 20.04 and Ubuntu 18.04.
 
@@ -19,8 +19,8 @@ cd ~/TWRP
 
 mkdir ~/.bin
 curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
-python3 ~/.bin/repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-4.4-deprecated
-git clone --branch twrp-4.4 --single-branch https://github.com/T11x-TWRP/android_platform_manifest.git .repo/local_manifests
+python3 ~/.bin/repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-5.1
+git clone --branch twrp-5.1 --single-branch https://github.com/T11x-TWRP/twrp_device_samsung_goya.git ~/TWRP/device/samsung/goya
 python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bun --prune -j$(nproc --all)
 ```
 
@@ -29,16 +29,16 @@ python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-
 ```bash
 mkdir ~/.jdk_7
 cd ~/.jdk_7
-wget https://repo.huaweicloud.com/java/jdk/7u80-b15/jdk-7u80-linux-i586.tar.gz
-tar -xzf jdk-7u80-linux-i586.tar.gz
+wget https://download.java.net/openjdk/jdk7u75/ri/openjdk-7u75-b13-linux-x64-18_dec_2014.tar.gz
+tar -xzf openjdk-7u75-b13-linux-x64-18_dec_2014.tar.gz
 ```
 
 ## Building TWRP
 ```bash
 OLDPATH=$PATH
 OLDJAVAHOME=$JAVA_HOME
-export PATH="$HOME/.jdk_7/jdk1.7.0_80/bin:$PATH"
-export JAVA_HOME="$HOME/.jdk_7/jdk1.7.0_80"
+export PATH="$HOME/.jdk_7/java-se-7u75-ri/bin:$PATH"
+export JAVA_HOME="$HOME/.jdk_7/java-se-7u75-ri"
 cd ~/TWRP
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
